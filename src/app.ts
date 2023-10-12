@@ -1,5 +1,7 @@
 import { Client, CommandInteraction, GatewayIntentBits } from "discord.js";
 
+import crearEmbedTickets from "./comandos/crearEmbedTickets";
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -19,5 +21,6 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", (message) => {
-  console.log(message.content);
+  if (message.author.bot) return;
+  crearEmbedTickets(message);
 });
