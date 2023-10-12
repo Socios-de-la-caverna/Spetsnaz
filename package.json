@@ -1,0 +1,18 @@
+{
+  "name": "spetsnaz",
+  "version": "1.0.0",
+  "description": "Bot oficial de Spetsnaz",
+  "main": "src/app.ts",
+  "scripts": {
+    "dev": "nodemon src/app.ts"
+  },
+  "author": "Kevin y Anfitrion",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
