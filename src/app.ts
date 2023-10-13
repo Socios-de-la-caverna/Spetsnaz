@@ -1,6 +1,7 @@
 import { Client, CommandInteraction, GatewayIntentBits } from "discord.js";
 
 import crearEmbedTickets from "./comandos/crearEmbedTickets";
+import reaccionExamen from "./eventos/reaccionExamen";
 
 const client = new Client({
   intents: [
@@ -21,6 +22,6 @@ client.on("ready", () => {
 });
 
 client.on("messageCreate", (message) => {
-  if (message.author.bot) return;
   crearEmbedTickets(message);
+  reaccionExamen(message);
 });

@@ -10,6 +10,7 @@ import {
 import primerModal from "../lib/examen/primerModal";
 
 export default async function crearEmbedTickets(message: Message) {
+  if (message.author.bot) return;
   if (message.content != "!embedTicket") return;
 
   const embed = new EmbedBuilder()
