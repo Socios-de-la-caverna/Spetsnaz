@@ -1,24 +1,35 @@
-import {REST, Routes} from 'discord.js';
+import {ApplicationCommand, ApplicationCommandOptionType, ApplicationCommandType, REST, Routes} from 'discord.js';
 require('dotenv').config()
 const {TOKEN, CLIENTID}:any = process.env
 
-const Comandos = [
+const comandos = [
     {
-        name: ''
-    }
+    name: 'usuario',
+    description: 'Comando para ver la descripción de un usuario',
+    options: [
+        {
+                name: 'usuario',
+                description: 'Pon el ID o menciona al usario del que quieras saber',
+                required: true,
+                type: ApplicationCommandOptionType.User
+        }
+    ]
+}
 ]
 
-const rest = new REST({version: "10"}).setToken(TOKEN);
 
-
-// (async ()=>{
-//     try {
-//         await rest.put(Routes.applicationGuildCommands(CLIENTID), {
-//           body: comandos,
-//         });
+async function lol(){
+    try {
+        console.log("XD")
+        const rest = new REST({version: "10"}).setToken(TOKEN);
+        await rest.put(Routes.applicationCommands(CLIENTID), {
+          body: comandos,
+        });
     
-//         console.log("Comandos registrados com exito!");
-//       } catch (error) {
-//         console.error(error);
-//       }
-// })
+        console.log("Comandos registrados com exito!");
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    lol()

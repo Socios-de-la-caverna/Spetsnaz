@@ -4,7 +4,8 @@
   "description": "Bot oficial de Spetsnaz",
   "main": "src/app.ts",
   "scripts": {
-    "dev": "nodemon src/app.ts"
+    "dev": "nodemon src/app.ts",
+    "registrar": "nodemon src/registrarComandos.ts"
   },
   "author": "Kevin y Anfitrion",
   "license": "ISC",

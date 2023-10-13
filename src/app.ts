@@ -1,11 +1,13 @@
 import { Client, CommandInteraction, GatewayIntentBits } from "discord.js";
-import EnviarEmbed_Bienvenida from "./Bienvenida/EnviarEmbed";
+import EnviarEmbed_Bienvenida from "./Bienvenida/enviarEmbed";
+import EnviarEmbed_Despedida from "./Despedida/enviarEmbed";
 
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMessages,
     GatewayIntentBits.MessageContent,
+    GatewayIntentBits.GuildMembers,
   ],
 });
 
@@ -19,10 +21,15 @@ client.on("ready", () => {
   console.log(`Logged in as ${client.user?.tag}!`);
 });
 
-client.on("guildMemberAdd", async (GuildMember)=>{
-  EnviarEmbed_Bienvenida(GuildMember, GuildMember.guild.id)
+
+//Codigo a ejecutar cuando un usuario se sale de uno de los tres servidores
+client.on("guildMemberRemove", member=>{
+  EnviarEmbed_Despedida(member, member.guild.id)
 })
 
-client.on("messageCreate", (message) => {
-  console.log(message.content);
-});
+
+//Codigo que se ejecutara cuando entre un miembro a uno de los tres servidores
+//
+client.on("guildMemberAdd", member=>{
+  EnviarEmbed_Bienvenida(member, member.guild.id)
+})
