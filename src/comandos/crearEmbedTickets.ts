@@ -5,7 +5,9 @@ import {
   ButtonStyle,
   ActionRowBuilder,
   ComponentType,
+  ChannelType,
 } from "discord.js";
+import primerModal from "../lib/examen/primerModal";
 
 export default async function crearEmbedTickets(message: Message) {
   if (message.content != "!embedTicket") return;
@@ -30,14 +32,11 @@ export default async function crearEmbedTickets(message: Message) {
     components: [componentes],
   });
 
-  const filtro = (i: any) => i.user.id === message.author.id;
-
   const colector = respuesta.createMessageComponentCollector({
     componentType: ComponentType.Button,
-    filter: filtro,
   });
 
-  colector.on("collect", async (i: Message) => {
-    i.reply({ content: "Ticket creado" });
+  colector.on("collect", async (i: any) => {
+    primerModal(i);
   });
 }
