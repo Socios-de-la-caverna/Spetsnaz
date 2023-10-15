@@ -123,10 +123,10 @@ export default async function primerModal(i: any) {
           id: i.guild?.roles.everyone.id,
           deny: [PermissionFlagsBits.ViewChannel],
         },
-        {
-          id: i.user.id,
-          allow: [PermissionFlagsBits.ViewChannel],
-        },
+        // {
+        //   id: i.user.id,
+        //   allow: [PermissionFlagsBits.ViewChannel],
+        // },
       ],
     });
 
@@ -146,7 +146,7 @@ Personales:
 
 [2;36m✦[0m ¿Se compromete a ser activo en Discord para asistir a las actividades y apoyar a la facción?
 > ${primeraPreguntaValor}
-[2;36m✦[0m ¿Usted perteneció a alguna facción militar?
+[2;36m✦[0m ¿Usted perteneció a alguna facción militar? ¿A cuales facciones has pertenecido?
 > ${segundaPreguntaValor}
 [2;36m✦[0m ¿Hay alguna aclaración extra que tiene con respecto a usted?
 > ${terceraPreguntaValor}
@@ -177,6 +177,6 @@ Personales:
       })
       .catch((err) => console.log(err));
 
-    modalInteraction.reply({ content: "Ticket creado", ephemeral: true });
+    modalInteraction.reply({ content: "Examen enviado correctamente", ephemeral: true });
   });
 }

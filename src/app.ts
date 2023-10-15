@@ -59,5 +59,4 @@ client.on("interactionCreate", (interaction) => {
 
 client.on("messageCreate", (message) => {
   crearEmbedTickets(message);
-  reaccionExamen(message);
 });
