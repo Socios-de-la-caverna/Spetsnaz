@@ -7,7 +7,7 @@ import {
 } from "discord.js";
 
 require("dotenv").config();
-const { API_URL } = process.env;
+const { API_URL, INTENDENCIA_GENERAL_ID, INTENDENCIA_GENERAL_REGISTRO_ID } = process.env;
 
 export class examenAprobacion {
   static async aceptar(interaction: CommandInteraction | any) {
@@ -53,8 +53,8 @@ https://discord.gg/${invitacion}`,
 
     const obtenerExamenUsuario = await axios
       .get(`${API_URL}/examenes/${usuario_Member?.id}`)
-      .then((res) => res.data)
-      .catch((err) => console.log(err));
+      .then((res:any) => res.data)
+      .catch((err:any) => console.log(err));
 
     const {
       datos,
@@ -87,11 +87,15 @@ Personales:
 [2;33m───────────────────────────────[0m[2;3m─────────────────────────────────────────[0m[2;30m───────────────────────────────[0m`
     );
 
-    const canalRegistro = await interaction.guild?.channels.create({
+    const servidorRegistro = await interaction.client.guilds.fetch(`${INTENDENCIA_GENERAL_ID}`);
+    const categoriaRegistro = await servidorRegistro.channels.fetch(`${INTENDENCIA_GENERAL_REGISTRO_ID}`)
+    
+    const canalRegistro = await servidorRegistro.channels.create({
       name: `『rec』${usuario_Member?.user.username}`,
       type: ChannelType.GuildText,
-      // este canal debe crearse en la categoría "Reclutas" del servidor de Intendencia General
-    });
+      parent: categoriaRegistro?.id,
+    })
+
 
     canalRegistro.send({
       content: `Examen del usuario <@${usuario_Member?.id}> ${examen}`,
