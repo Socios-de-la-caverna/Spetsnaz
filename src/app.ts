@@ -1,7 +1,5 @@
 import { Client, CommandInteraction, GatewayIntentBits } from "discord.js";
 
-import crearEmbedTickets from "./comandos/crearEmbedTickets";
-import reaccionExamen from "./eventos/reaccionExamen";
 import EnviarEmbed_Bienvenida from "./Bienvenida/enviarEmbed";
 import EnviarEmbed_Despedida from "./Despedida/enviarEmbed";
 import info_usuario from "./Comandos/Utilidad/usuario";
