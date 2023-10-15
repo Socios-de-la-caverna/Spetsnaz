@@ -49,13 +49,14 @@ client.on("interactionCreate", (interaction) => {
     case "aceptar":
       examenAprobacion.aceptar(interaction);
       break;
-    case "aceptar":
+    case "rechazar":
       examenAprobacion.rechazar(interaction);
       break;
     default:
       break;
   }
 });
+
 client.on("messageCreate", (message) => {
   crearEmbedTickets(message);
   reaccionExamen(message);
