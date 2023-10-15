@@ -5,7 +5,8 @@
   "main": "src/app.ts",
   "scripts": {
     "dev": "nodemon src/app.ts",
-    "registrar": "nodemon src/registrarComandos.ts"
+    "registrar": "nodemon src/registrarComandos.ts",
+    "registrar_reclutamiento": "nodemon src/registrarComandos(Reclutamiento)"
   },
   "author": "Kevin y Anfitrion",
   "license": "ISC",

@@ -2,7 +2,10 @@ import { Client, CommandInteraction, GatewayIntentBits } from "discord.js";
 import EnviarEmbed_Bienvenida from "./Bienvenida/enviarEmbed";
 import EnviarEmbed_Despedida from "./Despedida/enviarEmbed";
 import info_usuario from "./Comandos/Utilidad/usuario";
+import { examenAprobacion } from "./Comandos/Examen/aprobacion";
 
+import crearEmbedTickets from "./comandos/crearEmbedTickets";
+import reaccionExamen from "./eventos/reaccionExamen";
 
 const client = new Client({
   intents: [
@@ -46,6 +49,12 @@ client.on("interactionCreate", interaction=>{
       info_usuario(interaction)
       break;
 
+      case "aceptar":
+        examenAprobacion.aceptar(interaction)
+        break;
+      case "aceptar":
+        examenAprobacion.rechazar(interaction)
+        break;
     default:
       break;
   }
