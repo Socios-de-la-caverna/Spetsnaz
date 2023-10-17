@@ -16,7 +16,6 @@ function crearEmbed_Usuario(Usuario_Nombre:any, Usuario_ID:any, Usuario_AvatarUR
     .setImage('https://cdn.discordapp.com/attachments/1121098388583227554/1121843021894393926/image.psds.png')
     return exampleEmbed;
   }
-  
 
 
 export default async function info_usuario(interaction:CommandInteraction) {

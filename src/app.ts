@@ -52,11 +52,13 @@ client.on("interactionCreate", (interaction) => {
     case "rechazar":
       examenAprobacion.rechazar(interaction);
       break;
+      
+    case "ticket":
+      crearEmbedTickets(interaction);
+      break;
+
     default:
       break;
   }
 });
 
-client.on("messageCreate", (message) => {
-  crearEmbedTickets(message);
-});

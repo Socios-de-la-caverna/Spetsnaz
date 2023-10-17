@@ -6,12 +6,11 @@ import {
   ActionRowBuilder,
   ComponentType,
   ChannelType,
+  CommandInteraction,
 } from "discord.js";
 import primerModal from "../lib/examen/primerModal";
 
-export default async function crearEmbedTickets(message: Message) {
-  if (message.author.bot) return;
-  if (message.content != "!embedTicket") return;
+export default async function crearEmbedTickets(interaction:CommandInteraction) {
 
   const embed = new EmbedBuilder()
     .setTitle("Examen de ingreso")
@@ -28,7 +27,8 @@ export default async function crearEmbedTickets(message: Message) {
     boton,
   );
 
-  const respuesta = await message.channel.send({
+  const canal:any = interaction.channel;
+  const respuesta = await canal.send({
     embeds: [embed],
     components: [componentes],
   });

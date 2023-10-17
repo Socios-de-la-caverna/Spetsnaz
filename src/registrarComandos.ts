@@ -9,18 +9,18 @@ require("dotenv").config();
 const { TOKEN, CLIENTID }: any = process.env;
 
 const comandos = [
-  {
-    name: "usuario",
-    description: "Comando para ver la descripción de un usuario",
-    options: [
-      {
-        name: "usuario",
-        description: "Pon el ID o menciona al usario del que quieras saber",
-        required: true,
-        type: ApplicationCommandOptionType.User,
-      },
-    ],
-  },
+  // {
+  //   name: "usuario",
+  //   description: "Comando para ver la descripción de un usuario",
+  //   options: [
+  //     {
+  //       name: "usuario",
+  //       description: "Pon el ID o menciona al usario del que quieras saber",
+  //       required: true,
+  //       type: ApplicationCommandOptionType.User,
+  //     },
+  //   ],
+  // }
   {
     name: "aceptar",
     description: "Comando para aceptar el examen de un usuario",
@@ -45,13 +45,17 @@ const comandos = [
       },
     ],
   },
+  {
+    name: "ticket",
+    description: "Comando para abrir un ticket",
+  }
 ];
 
 async function lol() {
   try {
     console.log("XD");
     const rest = new REST({ version: "10" }).setToken(TOKEN);
-    await rest.put(Routes.applicationCommands(CLIENTID), {
+    await rest.put(Routes.applicationGuildCommands(CLIENTID, "1144818557180465164"), {
       body: comandos,
     });
 

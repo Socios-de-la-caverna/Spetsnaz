@@ -90,6 +90,8 @@ Personales:
     const servidorRegistro = await interaction.client.guilds.fetch(`${INTENDENCIA_GENERAL_ID}`);
     const categoriaRegistro = await servidorRegistro.channels.fetch(`${INTENDENCIA_GENERAL_REGISTRO_ID}`)
     
+
+
     const canalRegistro = await servidorRegistro.channels.create({
       name: `『rec』${usuario_Member?.user.username}`,
       type: ChannelType.GuildText,
