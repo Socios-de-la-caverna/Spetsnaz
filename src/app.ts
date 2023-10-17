@@ -1,4 +1,4 @@
-import { Client, CommandInteraction, GatewayIntentBits } from "discord.js";
+import { Client, CommandInteraction, GatewayIntentBits, GuildMember } from "discord.js";
 
 import bienvenida from "./eventos/Bienvenida/enviarEmbed";
 import despedida from "./eventos/Despedida/enviarEmbed";
@@ -40,7 +40,6 @@ client.on("guildMemberAdd", (member) => {
 //Codigo que se ejecuta al momento de que un usuario usa un comando
 client.on("interactionCreate", (interaction) => {
   if (!interaction.isChatInputCommand()) return;
-
   switch (interaction.commandName) {
     case "usuario":
       info_usuario(interaction);
