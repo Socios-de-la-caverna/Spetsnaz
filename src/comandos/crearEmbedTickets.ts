@@ -38,6 +38,7 @@ export default async function crearEmbedTickets(interaction:CommandInteraction) 
   });
 
   colector.on("collect", async (i: any) => {
+    respuesta.delete();
     primerModal(i);
   });
 }
