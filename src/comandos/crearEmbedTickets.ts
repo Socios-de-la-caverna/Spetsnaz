@@ -27,7 +27,7 @@ export default async function crearEmbedTickets(interaction:CommandInteraction) 
     boton,
   );
 
-  const canal = interaction.channel;
+  const canal:any = interaction.channel;
   const respuesta = await canal.send({
     embeds: [embed],
     components: [componentes],
