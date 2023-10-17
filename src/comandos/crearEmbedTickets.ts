@@ -37,8 +37,13 @@ export default async function crearEmbedTickets(interaction:CommandInteraction) 
     componentType: ComponentType.Button,
   });
 
+
   colector.on("collect", async (i: any) => {
     respuesta.delete();
     primerModal(i);
   });
+
+  setTimeout(()=>{
+    respuesta.delete();
+  }, 2000)
 }
