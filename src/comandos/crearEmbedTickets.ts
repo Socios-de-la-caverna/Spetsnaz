@@ -27,7 +27,7 @@ export default async function crearEmbedTickets(interaction:CommandInteraction) 
     boton,
   );
 
-  const canal:any = interaction.channel;
+  const canal = interaction.channel;
   const respuesta = await canal.send({
     embeds: [embed],
     components: [componentes],
@@ -39,8 +39,9 @@ export default async function crearEmbedTickets(interaction:CommandInteraction) 
 
 
   colector.on("collect", async (i: any) => {
-    respuesta.delete();
     primerModal(i);
+    interaction.reply({content: '¡Embed de ticket creado exitosamente!', ephemeral: true})
+    respuesta.delete();
   });
 
   setTimeout(()=>{
