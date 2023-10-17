@@ -7,10 +7,11 @@ import {
   PermissionFlagsBits,
   codeBlock,
   time,
+  CommandInteraction,
 } from "discord.js";
 import axios from "axios";
 
-export default async function primerModal(i: any) {
+export default async function primerModal(i: CommandInteraction) {
   const modal = new ModalBuilder({
     customId: `modal-${i.user?.globalName}`,
     title: "Examen - primera hoja",
@@ -114,7 +115,7 @@ export default async function primerModal(i: any) {
       modalInteraction.fields.getTextInputValue("cuartaPregunta");
     const fecha = new Date().toLocaleString("es-MX");
 
-    const canalTicket = await i.guild?.channels.create({
+    const canalTicket:any = await i.guild?.channels.create({
       name: `examen-${i.user.globalName}`,
       type: ChannelType.GuildText,
       parent: "1144818558656860221",
@@ -130,7 +131,7 @@ export default async function primerModal(i: any) {
       ],
     });
 
-    const canalVeredicto = await i.guild?.channels.cache.get(
+    const canalVeredicto:any = await i.guild?.channels.cache.get(
       "1144818559650910285",
     );
 

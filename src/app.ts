@@ -5,6 +5,7 @@ import despedida from "./eventos/Despedida/enviarEmbed";
 import info_usuario from "./comandos/Utilidad/usuario";
 import { examenAprobacion } from "./comandos/Examen/aprobacion";
 
+import primerModal from "./lib/examen/primerModal";
 import crearEmbedTickets from "./comandos/crearEmbedTickets";
 import reaccionExamen from "./eventos/reaccionExamen";
 
@@ -53,7 +54,7 @@ client.on("interactionCreate", (interaction) => {
       break;
       
     case "ticket":
-      crearEmbedTickets(interaction);
+      primerModal(interaction);
       break;
 
     default:
