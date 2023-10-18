@@ -30,6 +30,7 @@ export default async function despedida(
   const usuario_Nombre: any = GuildMember.user.displayName;
 
   if (Servidor_ID == FACCION_ID) {
+    console.log("XD")
     const canal_DESPEDIDA: any =
       GuildMember.guild.channels.cache.get(FACCION_DESPEDIDA_ID);
     canal_DESPEDIDA.send({
