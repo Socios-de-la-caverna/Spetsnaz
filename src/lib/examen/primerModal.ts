@@ -96,13 +96,13 @@ export default async function primerModal(i: CommandInteraction) {
       (usuario: any) => usuario.discord_id === modalInteraction.user?.id,
     );
 
-    // if (usuarioExaminado) {
-    //   modalInteraction.reply({
-    //     content: "Ya has realizado el examen.",
-    //     ephemeral: true,
-    //   });
-    //   return;
-    // }
+    if (usuarioExaminado) {
+      modalInteraction.reply({
+        content: "Ya has realizado el examen.",
+        ephemeral: true,
+      });
+      return;
+    }
 
     const datosValor = modalInteraction.fields.getTextInputValue("datos");
     const primeraPreguntaValor =
