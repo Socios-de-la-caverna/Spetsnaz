@@ -31,7 +31,7 @@ export default async function primerModal(i: CommandInteraction) {
 
   const inputSegundaPregunta = new TextInputBuilder({
     customId: "segundaPregunta",
-    label: "¿Usted perteneció a alguna facción militar? ¿A cuales facciones has pertenecido?",
+    label: "¿A cuales facciones militares ha pertenecido?",
     style: TextInputStyle.Paragraph,
   });
 

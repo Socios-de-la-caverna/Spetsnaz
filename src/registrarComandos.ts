@@ -46,7 +46,7 @@ const comandos = [
     ],
   },
   {
-    name: "ticket",
+    name: "examen",
     description: "Comando para abrir un ticket",
   }
 ];

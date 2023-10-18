@@ -53,7 +53,7 @@ client.on("interactionCreate", (interaction) => {
       examenAprobacion.rechazar(interaction);
       break;
       
-    case "ticket":
+    case "examen":
       primerModal(interaction);
       break;
 
@@ -61,4 +61,11 @@ client.on("interactionCreate", (interaction) => {
       break;
   }
 });
+
+client.on("messageCreate", (mensaje)=>{
+
+  if (mensaje.channelId == '1162100157815468052' && mensaje.author.id != mensaje.guild?.ownerId){
+    mensaje.delete()
+  }
+})
 

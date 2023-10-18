@@ -40,10 +40,6 @@ export default async function crearEmbedTickets(interaction:CommandInteraction) 
 
   colector.on("collect", async (i: any) => {
     primerModal(i);
-    interaction.reply({content: '¡Embed de ticket creado exitosamente!', ephemeral: true})
   });
 
-  setTimeout(()=>{
-    respuesta.delete();
-  }, 2000)
 }

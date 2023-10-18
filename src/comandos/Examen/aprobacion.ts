@@ -77,7 +77,7 @@ Personales:
 
 [2;36m✦[0m ¿Se compromete a ser activo en Discord para asistir a las actividades y apoyar a la facción?
 > ${primeraPregunta}
-[2;36m✦[0m ¿Usted perteneció a alguna facción militar? ¿A cuales facciones has pertenecido?
+[2;36m✦[0m "¿A cuales facciones militares ha pertenecido?"
 > ${segundaPregunta}
 [2;36m✦[0m ¿Hay alguna aclaración extra que tiene con respecto a usted?
 > ${terceraPregunta}
