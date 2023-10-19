@@ -12,7 +12,7 @@ function crearEmbed_Usuario(Usuario_Nombre:any, Usuario_ID:any, Usuario_AvatarUR
     .addFields({name: 'ID del usuario ', value: `${Usuario_ID}`})
     .addFields({name: 'URL del avatar ', value: `[Avatar](${Usuario_AvatarURL})`})
     .addFields({name: 'Se unio al servidor el ', value: `${Usuario_Member_Fecha_Dia}/${Usuario_Member_Fecha_Mes}/${Usuario_Member_Fecha_Ano}`})
-    .addFields({name: 'Roles del usuario', value: `${Usuario_Roles}`})
+    // .addFields({name: 'Roles del usuario', value: `${Usuario_Roles}`})
     .setImage('https://cdn.discordapp.com/attachments/1121098388583227554/1121843021894393926/image.psds.png')
     return exampleEmbed;
   }

@@ -115,21 +115,21 @@ export default async function primerModal(i: CommandInteraction) {
       modalInteraction.fields.getTextInputValue("cuartaPregunta");
     const fecha = new Date().toLocaleString("es-MX");
 
-    const canalTicket:any = await i.guild?.channels.create({
-      name: `examen-${i.user.globalName}`,
-      type: ChannelType.GuildText,
-      parent: "1144818558656860221",
-      permissionOverwrites: [
-        {
-          id: i.guild?.roles.everyone.id,
-          deny: [PermissionFlagsBits.ViewChannel],
-        },
-        // {
-        //   id: i.user.id,
-        //   allow: [PermissionFlagsBits.ViewChannel],
-        // },
-      ],
-    });
+    // const canalTicket:any = await i.guild?.channels.create({
+    //   name: `examen-${i.user.globalName}`,
+    //   type: ChannelType.GuildText,
+    //   parent: "1144818558656860221",
+    //   permissionOverwrites: [
+    //     {
+    //       id: i.guild?.roles.everyone.id,
+    //       deny: [PermissionFlagsBits.ViewChannel],
+    //     },
+    //     // {
+    //     //   id: i.user.id,
+    //     //   allow: [PermissionFlagsBits.ViewChannel],
+    //     // },
+    //   ],
+    // });
 
     const canalVeredicto:any = await i.guild?.channels.cache.get(
       "1144818559650910285",
@@ -160,9 +160,9 @@ Personales:
 [2;33m───────────────────────────────[0m[2;3m─────────────────────────────────────────[0m[2;30m───────────────────────────────[0m`,
     );
 
-    canalTicket.send({
-      content: `Examen del usuario <@${modalInteraction.user?.id}> ${examen}`,
-    });
+    // canalTicket.send({
+    //   content: `Examen del usuario <@${modalInteraction.user?.id}> ${examen}`,
+    // });
 
     canalVeredicto.send({
       content: `Examen del usuario <@${modalInteraction.user?.id}> ${examen}`,

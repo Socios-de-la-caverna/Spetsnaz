@@ -8,7 +8,7 @@ import {
   Embed,
   EmbedBuilder,
 } from "discord.js";
-
+import axios from "axios";
 import embedBienvenidaFaccion from "./embeds/servidorFaccion";
 import embedBienvenidaReclutamiento from "./embeds/servidorReclutamiento";
 import embedBienvenidaIntendenciaGeneral from "./embeds/servidorIntendencia";
@@ -25,14 +25,33 @@ const {
   INTENDENCIA_GENERAL_BIENVENIDA_ID,
 }: any = process.env;
 
+
+
 export default async function bienvenida(
   GuildMember: GuildMember,
   Servidor_ID: string,
 ) {
+
+  
+// const { API_URL } = process.env;
+
+// const pingBackend = await axios
+//   .get(`${API_URL}/examenes`)
+//   .then((res) => res.data)
+//   .catch((err) => console.log(err));
+
+
+// const usuarioExaminadoNombre = pingBackend.find(
+//   (usuario: any) => usuario.discord_id === GuildMember.id,
+// ).nombre;
+
+
+
   const usuario_ID = GuildMember.user.id;
   const usuario_Nombre: any = GuildMember.user.displayName;
 
   if (Servidor_ID == FACCION_ID) {
+    GuildMember.setNickname(`『SID』${GuildMember.displayName}`)
     const canal_Bienvenida: any = GuildMember.guild.channels.cache.get(
       FACCION_BIENVENIDA_ID,
     );
